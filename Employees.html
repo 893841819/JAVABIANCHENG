@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript">
+
+    function Check(){
+        if(document.getElementById('empno').value.length==0)
+        {
+            alert("编号不能为空！");
+            document.getElementById('empno').focus();
+            return false;
+        }
+        var value = document.getElementById("empno").value;
+        var reg=/^[1-9]\d*$|^0$/;
+        if(reg.test(value)!=true)
+        {
+            alert("编号必须为数字！");
+            document.getElementById('empno').focus();
+            return false;
+        }
+
+        if(document.getElementById('empname').value.length==0)
+        {
+            alert("姓名不能为空！");
+            document.getElementById('empname').focus();
+            return false;
+        }
+
+        if(document.getElementById('empjob').value.length==0)
+        {
+            alert("工作不能为空！");
+            document.getElementById('empjob').focus();
+            return false;
+        }
+
+        if(!document.getElementById("empdate").value.match("^[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}$"))
+        {
+            alert( "日期格式错误 xxxx-xx-xx");
+            document.getElementById('empdate').focus();
+            return false;
+        }
+
+        if(!document.getElementById("empsal").value.match("^[0-9]{1,9}.[0-9]{2,2}$"))
+        {
+            alert( "工资格式错误x...x.xx ");
+            document.getElementById('empsal').focus();
+            return false;
+        }
+
+        if(!document.getElementById("empbond").value.match("^[0-9]{1,9}.[0-9]{2,2}$"))
+        {
+            alert( "奖金格式错误x...x.xx ");
+            document.getElementById('empbond').focus();
+            return false;
+        }
+    }
+
+</script>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>第三、四题-Employees</title>
+</head>
+<body>
+<form action="https://893841819.github.io/TestMyH5/ChangAn/page.html" method="get" name="emp" onSubmit="return Check()">
+    雇员编号：<input type="number" id="empno" name="empno"><br>
+    雇员姓名：<input type="text" id="empname" name="empname"><br>
+    雇员工作：<input type="text" id="empjob" name="empjob"><br>
+    雇佣日期：<input type="text" id="empdate" name="empdate"><br>
+    基本工资：<input type="number" id="empsal" name="empsal"><br>
+    奖&nbsp;&nbsp;&nbsp;金：<input type="number" id="empbond" name="empbond"><br>
+    <input type="submit" value="提交"><input type="reset" value="重置"><br>
+
+</body>
+</html>

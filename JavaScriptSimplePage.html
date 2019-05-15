@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="q" src="images/XinLan.jpg">
+<img id="h" src="images/XinLan2.png">
+
+
+<input type="button" value="显示或者隐藏图片"
+       onclick="f()";>
+</body>
+</html>
+<script>
+    var obj=document.getElementById('q');
+    obj.style.display='none';
+
+ /*   function f() {
+      if ( objo.style.display=='none'){
+            var obj=document.getElementById('q');
+            obj.style.display="block";
+        }*/
+
+function f() {
+    var obj=document.getElementById('q');
+    obj.style.display=obj.style.display=='none'?'':'none';
+}
+
+
+        var obj1=document.getElementById('h');
+        obj1.style.display=obj1.style.display=='none'?'':'none';
+
+
+
+
+
+
+    }
+
+</script>

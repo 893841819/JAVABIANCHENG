@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<Script Language="JavaScript">
+
+    function change(){
+//通过 style.visibility 属性隐藏第一个图片
+        document.images[0].style.visibility="hidden";
+        document.images[1].style.visibility="visible"; //显示第二个图片
+//将第一个文本框中预设置的字符串存入变量 str
+        str=document.forms[0].elements[0].value;
+        document.forms[0].elements[1].value=str; //将 str 赋予第二个文本框
+//将焦点移到第二个文本框，使其进入文字输入状态。
+        document.forms[0].elements[1].focus();
+//清除第一个文本框中预设置的文字
+        document.forms[0].elements[0].value="";
+//隐藏第一个文本框
+        document.forms[0].elements[0].style.visibility="hidden";
+    }
+    function show(){
+//显示第一个文本框
+        document.forms[0].elements[0].style.visibility="visible";
+        document.images[0].style.visibility="visible"; //显示第一个图片
+        eval('div1.style.background="blue";'); //将 div1 背景色设置为蓝色
+        eval('div2.style.background="red";'); //将 div2 背景色设置为红色
+        eval('div3.style.background="lightblue";'); //将 div3 设置为天蓝色
+        eval('div4.style.background="antiquewhite";'); //div4 设置为鹅黄色
+    }
+    function info(){
+        cfm=confirm("确实要保留文本 2 的内容吗？");
+        if(cfm);
+        else document.forms[0].elements[1].value="";
+    }
+
+</Script>
+<head>
+    <meta charset="UTF-8">
+    <title>第五题JS制作的简单页面</title>
+</head>
+<body>
+<form action="https://893841819.github.io/TestMyH5/ChangAn/page.html" method="get" name=frm>
+    <table>
+        <tr>
+            <td>
+                <div id="div1">
+                    <img src="images/XinLan.jpg" width=200 height=200 style="visibility:visible">
+                </div>
+            </td><td>
+            <div id="div2" ALIGN=“CENTER”>
+                <img src="images/XinLan2.png" width=270 height=200 style="visibility:hidden">
+            </div>
+        </td></tr>
+        <tr><td>
+            <div id="div3">
+                文本 1<input type="text" value="这是预设置文字"><br><br>
+                文本 2<input type="text" value="改变此内容将弹出提示框" size=22 onChange="info();">
+            </div>
+        </td><td>
+            <div id="div4">
+                <input type="button" value="切换隐藏图片" onClick="change();">
+                <input type="button" value="显示图片及设置背景色" size=15 onClick="show();"><br><br>
+                <input type=submit value="提交表单" >
+                <input type=reset value="重置">
+            </div>
+        </td></tr></table>
+</form>
+</body>
+</html>
